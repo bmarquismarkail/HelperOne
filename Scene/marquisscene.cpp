@@ -15,3 +15,18 @@ WorldBase* MarquisScene::getParent()
 {
     return inWorld;
 }
+
+int MarquisScene::addObject(ObjectBase *Object)
+{
+    return getObjectManager()->addObject(Object);
+}
+
+int MarquisScene::deleteObject(ob_id ID)
+{
+    return getObjectManager()->deleteObject(ID);
+}
+
+void MarquisScene::executeObject(ob_id ID)
+{
+    getObjectManager()->GetObjectList()->find(ID)->second->execute();
+}

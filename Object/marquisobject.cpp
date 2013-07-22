@@ -10,3 +10,18 @@ MarquisObject::~MarquisObject()
 {
     //dtor
 }
+
+int MarquisObject::addComponent(ComponentBase *Cmpnt)
+{
+    return getComponentManager()->addComponent(Cmpnt);
+}
+
+int MarquisObject::deleteComponent(com_id ID)
+{
+    return getComponentManager()->deleteComponent(ID);
+}
+
+void MarquisObject::executeComponent(com_id ID)
+{
+    getComponentManager()->getComponentList()->find(ID)->second->execute();
+}
