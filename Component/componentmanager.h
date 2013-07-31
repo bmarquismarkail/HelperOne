@@ -7,7 +7,7 @@
 #include <map>
 
 typedef std::map<const com_id, ComponentBase*> ComponentList;
-class ComponentManager : public _manager
+class ComponentManager : virtual public _manager
 {
     public:
         //ctors and dtors

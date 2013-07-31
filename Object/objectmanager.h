@@ -6,7 +6,7 @@
 #include <map>
 
 typedef std::map<const ob_id, ObjectBase*> ObjectList;
-class ObjectManager : public _manager
+class ObjectManager : virtual public _manager
 {
     public:
         //ctors and dtors

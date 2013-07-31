@@ -2,16 +2,16 @@
 #define BASEFUNC_H
 
 
-class _func
+class _mq
 {
     public:
-        _func();
-        virtual ~_func();
+        _mq();
+        virtual ~_mq();
     protected:
     private:
 };
 
-class _object : public _func
+class _object : virtual public _mq
 {
     public:
         _object();
@@ -20,7 +20,7 @@ class _object : public _func
     private:
 };
 
-class _manager : public _func
+class _manager : virtual public _mq
 {
     public:
         _manager();

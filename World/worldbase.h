@@ -3,7 +3,7 @@
 
 #include "../scene/scenemanager.h"
 #include "../basefunc.h"
-class WorldBase : public _object
+class WorldBase : virtual public _object
 {
     public:
         //ctors and dtors
@@ -14,8 +14,8 @@ class WorldBase : public _object
         virtual void close();               //cleans up the world safely for closing
         SceneManager* getSceneManager();    //Gets the SceneManager
     protected:
-    private:
         SceneManager *scManager;           //The scene manager.
+    private:
 };
 
 #endif // WORLDBASE_H

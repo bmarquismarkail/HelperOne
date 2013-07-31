@@ -12,14 +12,14 @@ MarquisWorld::~MarquisWorld()
 
 MarquisScene* MarquisWorld::addScene(MarquisScene *Scene)
 {
-    if(WorldBase::getSceneManager()->addScene(Scene))
+    if(scManager->addScene(Scene))
         return Scene;
     return NULL;
 }
 
 int MarquisWorld::deleteScene(sc_id ID)
 {
-    if(WorldBase::getSceneManager()->deleteScene(ID))
+    if(scManager->deleteScene(ID))
         return 1;
     return 0;
 }
@@ -36,5 +36,5 @@ void MarquisWorld::close()
 
 void MarquisWorld::setActiveScene(sc_id ID)
 {
-    getSceneManager()->setActiveScene(ID);
+    scManager->setActiveScene(ID);
 }

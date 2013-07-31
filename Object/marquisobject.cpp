@@ -13,15 +13,15 @@ MarquisObject::~MarquisObject()
 
 int MarquisObject::addComponent(ComponentBase *Cmpnt)
 {
-    return getComponentManager()->addComponent(Cmpnt);
+    return gocManager->addComponent(Cmpnt);
 }
 
 int MarquisObject::deleteComponent(com_id ID)
 {
-    return getComponentManager()->deleteComponent(ID);
+    return gocManager->deleteComponent(ID);
 }
 
 void MarquisObject::executeComponent(com_id ID)
 {
-    getComponentManager()->getComponentList()->find(ID)->second->execute();
+    gocManager->getComponentList()->find(ID)->second->execute();
 }

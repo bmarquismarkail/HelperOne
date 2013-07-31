@@ -1,10 +1,10 @@
 #include "basefunc.h"
 
-_func::_func()
+_mq::_mq()
 {
 }
 
-_func::~_func()
+_mq::~_mq()
 {
 }
 

@@ -14,8 +14,8 @@ class MarquisObject : public ObjectBase
         int deleteComponent(com_id ID);
         void executeComponent(com_id ID);
     protected:
-    private:
         SceneBase *inScene;
+    private:
 };
 
 #endif // MARQUISOBJECT_H

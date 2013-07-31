@@ -10,3 +10,8 @@ MarquisComponent::~MarquisComponent()
 {
     //dtor
 }
+
+ObjectBase* MarquisComponent::getActiveObject()
+{
+    return inObject;
+}

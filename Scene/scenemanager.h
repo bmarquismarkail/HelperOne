@@ -6,7 +6,7 @@
 
 typedef std::map<const sc_id, SceneBase*> sceneList;
 
-class SceneManager :public _manager
+class SceneManager : virtual public _manager
 {
     public:
         SceneManager();

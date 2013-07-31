@@ -10,9 +10,10 @@ class MarquisComponent : public ComponentBase
     public:
         MarquisComponent(const com_id &id, ObjectBase *Object);
         ~MarquisComponent();
+        ObjectBase *getActiveObject();
     protected:
-    private:
         ObjectBase *inObject;
+    private:
 };
 
 #endif // MARQUISCOMPONENT_H
