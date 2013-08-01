@@ -14,13 +14,12 @@ const char*  _mq::getError()
 	return errorMessage.c_str();
 }
 
-void _mq::setError(const char *errMessage, bool termFlag = false)
-{	
+void _mq::setError(const char *errMessage, bool termFlag)
+{
 	errorMessage = errMessage;
 	errorBit = true;
 	if(termFlag)
 		exit(EXIT_FAILURE);
-	delete[] buffer;
 }
 
 void _mq::clearError()
