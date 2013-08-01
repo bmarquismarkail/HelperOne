@@ -13,8 +13,8 @@ class MarquisWorld : public WorldBase
         virtual void execute();
         virtual void close();
         MarquisScene *addScene(MarquisScene *Scene);
-        int deleteScene(sc_id ID);
-        void setActiveScene(sc_id ID);
+        void deleteScene(sc_id ID);
+        int setActiveScene(sc_id ID);
     protected:
     private:
 };

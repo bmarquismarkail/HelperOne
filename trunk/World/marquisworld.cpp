@@ -17,7 +17,7 @@ MarquisScene* MarquisWorld::addScene(MarquisScene *Scene)
     return NULL;
 }
 
-int MarquisWorld::deleteScene(sc_id ID)
+void MarquisWorld::deleteScene(sc_id ID)
 {
     if(scManager->deleteScene(ID))
         return 1;
