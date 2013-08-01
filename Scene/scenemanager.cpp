@@ -16,9 +16,16 @@ SceneManager::~SceneManager()
 int SceneManager::addScene(SceneBase *Scene)
 {
     if(Scene)
-        if(scList->insert(std::pair<sc_id, SceneBase*>(Scene->getSceneID(), Scene)).second)
-            return 1;
-    return 0;
+    {
+        sceneList::iterator safety = scList->find(Scene->getSceneID());
+        if(safety == scList->end())
+        {
+            if(scList->insert(std::pair<sc_id, SceneBase*>(Scene->getSceneID(), Scene)).second)
+                return 0;
+        }
+        return -1;
+    }
+    return -2;
 }
 int SceneManager::deleteScene(sc_id ID)
 {
@@ -27,9 +34,9 @@ int SceneManager::deleteScene(sc_id ID)
     {
         delete DelIt->second;
         scList->erase(DelIt);
-        return 1;
+        return 0;
     }
-    return 0;
+    return -1;
 }
 
 int SceneManager::deleteAllScenes()
@@ -45,10 +52,14 @@ SceneBase* SceneManager::getActiveScene()
     return ActiveScene;
 }
 
-void SceneManager::setActiveScene(sc_id ID)
+int SceneManager::setActiveScene(sc_id ID)
 {
     sceneList::iterator SetIt = scList->find(ID);
     if(SetIt != scList->end())
+    {
         ActiveScene = SetIt->second;
+        return 0;
+    }
     else ActiveScene = NULL;
+    return -1;
 }

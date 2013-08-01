@@ -9,7 +9,7 @@ class _mq
         _mq();
         virtual ~_mq();
 		const char *getError();
-		void setError(const char *errMessage, bool termFlag);
+		void setError(const char *errMessage, bool termFlag = false);
 		void clearError();
     protected:
 		bool errorBit;

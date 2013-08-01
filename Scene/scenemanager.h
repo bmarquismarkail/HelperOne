@@ -17,7 +17,7 @@ class SceneManager : virtual public _manager
         int deleteScene(sc_id ID);
         //Gets the Active Scene
         SceneBase *getActiveScene(); //Returns the Active Scene, or NULL is there is none.
-        void setActiveScene(sc_id ID); //Sets the Active Scene.
+        int setActiveScene(sc_id ID); //Sets the Active Scene.
 
     protected:
     private:
