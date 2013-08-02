@@ -4,14 +4,12 @@
 using namespace std;
 SceneBase::SceneBase(const sc_id &id)
 {
-    //ctor
     ID =id;
     objManager = new ObjectManager();
 }
 
 SceneBase::~SceneBase()
 {
-    //dtor
     close();
 }
 

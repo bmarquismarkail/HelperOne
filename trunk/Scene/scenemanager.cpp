@@ -15,36 +15,34 @@ SceneManager::~SceneManager()
 
 int SceneManager::addScene(SceneBase *Scene)
 {
-    if(Scene)
+    if(Scene) //Does the argument points to a Scene?
     {
-        sceneList::iterator safety = scList->find(Scene->getSceneID());
-        if(safety == scList->end())
-        {
-            if(scList->insert(std::pair<sc_id, SceneBase*>(Scene->getSceneID(), Scene)).second)
-                return 0;
-        }
-        return -1;
+		//Can you insert this scene into the scenelist?
+		if(scList->insert(std::pair<sc_id, SceneBase*>(Scene->getSceneID(), Scene)).second)
+			return 0; 								//Inserted safely
+			else return -1;							//The Scene has a key that is already in the list
     }
-    return -2;
+    return -2;										//This scene points to nothing.
 }
 int SceneManager::deleteScene(sc_id ID)
 {
-    sceneList::iterator DelIt = scList->find(ID);
+	//This is to keep needless processing by checking to see if there is a scene with that key already in the list
+    sceneList::iterator DelIt = scList->find(ID); 	
     if(DelIt !=scList->end())
     {
-        delete DelIt->second;
-        scList->erase(DelIt);
-        return 0;
+        delete DelIt->second; 
+        scList->erase(DelIt); 						//for to reuse the ID if needed.
+        return 0;									//This function completes sucessfully
     }
-    return -1;
+    return -1;										//This sceneID is not in the list.
 }
 
 int SceneManager::deleteAllScenes()
 {
     for (sceneList::iterator DelIt = scList->begin(); DelIt != scList->end(); ++DelIt)
-        delete DelIt->second;
-    scList->clear();
-    return 0;
+        delete DelIt->second; 						//This loop is to call all the scene's deconstructors, which performs cleanup.
+    scList->clear();								//Removes all SceneBase pointers and ID's
+    return 0;										//technically, it should always return 0.
 }
 
 SceneBase* SceneManager::getActiveScene()
