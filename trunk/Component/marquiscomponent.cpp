@@ -1,6 +1,6 @@
 #include "marquiscomponent.h"
 
-MarquisComponent::MarquisComponent(const com_id &id, ObjectBase *Object) : ComponentBase(id)
+MarquisComponent::MarquisComponent(const com_id &id, MarquisObject *Object) : ComponentBase(id)
 {
     inObject = Object;
     //ctor
@@ -11,7 +11,7 @@ MarquisComponent::~MarquisComponent()
     //dtor
 }
 
-ObjectBase* MarquisComponent::getActiveObject()
+MarquisObject* MarquisComponent::getGuardianObject()
 {
     return inObject;
 }

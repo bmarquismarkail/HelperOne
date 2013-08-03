@@ -15,9 +15,13 @@ ComponentManager::~ComponentManager()
 
 int ComponentManager::addComponent(ComponentBase *Cmpnt)
 {
-    if(cmpList->insert(std::pair<com_id, ComponentBase*>(Cmpnt->getComponentID(), Cmpnt)).second)
-        return 0;
-    return -1;
+	if(Cmpnt)
+	{
+		if(cmpList->insert(std::pair<com_id, ComponentBase*>(Cmpnt->getComponentID(), Cmpnt)).second)
+			return 0;
+		else return -1; //The Component you are trying to insert has an ID already in the Object List
+	}
+    return -2; //This points to empty data.
 }
 
 int ComponentManager::deleteComponent(com_id ID)
@@ -27,9 +31,9 @@ int ComponentManager::deleteComponent(com_id ID)
     {
         delete DelIt->second;
         cmpList->erase(DelIt);
-        return 1;
+        return 0;
     }
-    return 0;
+    return -1;
 }
 
 ComponentList* ComponentManager::getComponentList()

@@ -23,7 +23,7 @@ MarquisScene* MarquisWorld::addScene(MarquisScene *Scene)
             setError("addScene: The scene you were attempting to add cannot be added in the scene.");
             return NULL;
         default:
-            setError("addScene: Unknown Return Value");
+            setError("addScene: An unknown error occurred");
             return NULL;
             break;
     }
@@ -48,13 +48,12 @@ int MarquisWorld::setActiveScene(sc_id ID)
 {
     switch(scManager->setActiveScene(ID))
     {
+        case 0:
+            return 0;
         case -1:
             setError("setActiveScene: Scene Not Found.");
             return -1;
-        case 0:
-            return 0;
         default: setError("setActiveScene: Unknown Return Value");
             return -2;
-            break;
     }
 }

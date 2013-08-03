@@ -2,17 +2,17 @@
 #define MARQUISCOMPONENT_H
 
 #include "ComponentBase.h"
-#include "../Object/objectbase.h"
+#include "../Object/marquisobject.h"
 
 
 class MarquisComponent : public ComponentBase
 {
     public:
-        MarquisComponent(const com_id &id, ObjectBase *Object);
+        MarquisComponent(const com_id &id, MarquisObject *Object);
         ~MarquisComponent();
-        ObjectBase *getActiveObject();
+        MarquisObject *getGuardianObject();
     protected:
-        ObjectBase *inObject;
+        MarquisObject *inObject;
     private:
 };
 

@@ -2,19 +2,22 @@
 #define MARQUISOBJECT_H
 
 #include "objectbase.h"
-#include "../Scene/scenebase.h"
+#include "../Scene/marquisscene.h"
+#include "../Component/marquiscomponent.h"
 
 
 class MarquisObject : public ObjectBase
 {
     public:
-        MarquisObject(const ob_id &id, SceneBase *Scene);
-        ~MarquisObject();
-        int addComponent(ComponentBase *Cmpnt);
-        int deleteComponent(com_id ID);
-        void executeComponent(com_id ID);
+		//The constructor. assigns an objectID and the scene that will execute this object
+        MarquisObject(const ob_id &id, MarquisScene *Scene);	
+        ~MarquisObject();									//The deconstructor. performs cleanup.
+        int addComponent(MarquisComponent *Cmpnt);				//Adds a component into the componentlist.
+        int deleteComponent(com_id ID);						//deletes a componet from the componentlist.
+        void executeComponent(com_id ID);					//executes a component in the componentlist.
+		MarquisScene *getGuardianScene();
     protected:
-        SceneBase *inScene;
+        MarquisScene *inScene;									//The scene that will execute this object.
     private:
 };
 
