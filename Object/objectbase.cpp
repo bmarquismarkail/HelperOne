@@ -22,7 +22,6 @@ void ObjectBase::execute()
 {
     for(ComponentList::iterator UpdIt = gocManager->getComponentList()->begin(); UpdIt != gocManager->getComponentList()->end(); ++UpdIt)
         UpdIt->second->execute();
-    //return "";
 }
 void ObjectBase::close()
 {

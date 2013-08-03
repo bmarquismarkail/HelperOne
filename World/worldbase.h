@@ -10,11 +10,11 @@ class WorldBase : virtual public _object
         WorldBase();
         virtual ~WorldBase();
         //various other functions
-        virtual void execute() = 0;              //updates the entire world
-        virtual void close();               //cleans up the world safely for closing
-        SceneManager* getSceneManager();    //Gets the SceneManager
+        virtual void execute() = 0;				//updates the entire world
+        virtual void close();               	//cleans up the world safely for closing
+        SceneManager* getSceneManager();		//Gets the SceneManager
     protected:
-        SceneManager *scManager;           //The scene manager.
+        SceneManager *scManager;				//The scene manager.
     private:
 };
 

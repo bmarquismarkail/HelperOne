@@ -1,6 +1,6 @@
 #include "marquisscene.h"
 
-MarquisScene::MarquisScene(const sc_id &id, WorldBase *World) : SceneBase(id)
+MarquisScene::MarquisScene(const sc_id &id, MarquisWorld *World) : SceneBase(id)
 {
     inWorld = World;
 }
@@ -10,12 +10,12 @@ MarquisScene::~MarquisScene()
     //dtor
 }
 
-WorldBase* MarquisScene::getParent()
+MarquisWorld* MarquisScene::getParent()
 {
     return inWorld;
 }
 
-int MarquisScene::addObject(ObjectBase *Object)
+int MarquisScene::addObject(MarquisObject *Object)
 {
     switch(objManager->addObject(Object))
 	{
