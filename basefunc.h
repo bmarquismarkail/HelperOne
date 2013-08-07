@@ -2,7 +2,7 @@
 #define BASEFUNC_H
 #include <string>
 
-#if __cplusplus != 199711L
+#if __cplusplus >= 201103L
 #include <unordered_map>
 #else
 #include <map>
@@ -12,7 +12,7 @@
 template<class T1, class T2>
 struct MarquisSystem
 {
-    #if __cplusplus != 199711L
+    #if __cplusplus >= 201103L
 	typedef std::unordered_map<T1,T2> ManMap;
 	#else
 	typedef std::map<T1,T2> ManMap;
