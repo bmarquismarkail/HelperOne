@@ -2,9 +2,8 @@
 #define SCENEMANAGER_H
 
 #include "scenebase.h"
-#include <map>
 
-typedef std::map<const sc_id, SceneBase*> sceneList;
+typedef MarquisSystem::ManMap<const sc_id, SceneBase*> SceneList;
 
 class SceneManager : virtual public _manager
 {
@@ -22,7 +21,7 @@ class SceneManager : virtual public _manager
     private:
         //The active scene. Defalts to NULL. If NULL, then the world closes on update.
         SceneBase *ActiveScene;
-        sceneList *scList;				//The list of all the scenes in the world.
+        SceneList *scList;				//The list of all the scenes in the world.
         int deleteAllScenes();			//Deletes all the scenes from the manager
 };
 

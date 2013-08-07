@@ -1,11 +1,11 @@
 #ifndef OBJECTMANAGER_H
 #define OBJECTMANAGER_H
 
-#include "objectbase.h"
 #include "../basefunc.h"
-#include <map>
+#include "objectbase.h"
 
-typedef std::map<const ob_id, ObjectBase*> ObjectList;
+typedef MarquisSystem::ManMap<const ob_id, ObjectBase*> ObjectList;
+
 class ObjectManager : virtual public _manager
 {
     public:

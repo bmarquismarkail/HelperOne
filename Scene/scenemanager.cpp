@@ -2,7 +2,7 @@
 
 SceneManager::SceneManager()
 {
-    scList = new sceneList();
+    scList = new SceneList();
     ActiveScene = NULL;
 }
 
@@ -27,7 +27,7 @@ int SceneManager::addScene(SceneBase *Scene)
 int SceneManager::deleteScene(sc_id ID)
 {
 	//This is to keep needless processing by checking to see if there is a scene with that key already in the list
-    sceneList::iterator DelIt = scList->find(ID); 	
+    SceneList::iterator DelIt = scList->find(ID); 	
     if(DelIt !=scList->end())
     {
         delete DelIt->second; 
@@ -39,7 +39,7 @@ int SceneManager::deleteScene(sc_id ID)
 
 int SceneManager::deleteAllScenes()
 {
-    for (sceneList::iterator DelIt = scList->begin(); DelIt != scList->end(); ++DelIt)
+    for (SceneList::iterator DelIt = scList->begin(); DelIt != scList->end(); ++DelIt)
         delete DelIt->second; 						//This loop is to call all the scene's deconstructors, which performs cleanup.
     scList->clear();								//Removes all SceneBase pointers and ID's
     return 0;										//technically, it should always return 0.
@@ -52,7 +52,7 @@ SceneBase* SceneManager::getActiveScene()
 
 int SceneManager::setActiveScene(sc_id ID)
 {
-    sceneList::iterator SetIt = scList->find(ID);
+    SceneList::iterator SetIt = scList->find(ID);
     if(SetIt != scList->end())
     {
         ActiveScene = SetIt->second;
