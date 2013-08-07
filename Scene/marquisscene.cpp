@@ -29,13 +29,14 @@ int MarquisScene::addObject(MarquisObject *Object)
 			return -2;
 		default:
 			setError("addScene: An unknown error occurred.", true);
+			return -3;
 	}
-	
+
 }
 
 int MarquisScene::deleteObject(ob_id ID)
 {
-	//TODO: add error messages 
+	//TODO: add error messages
     return objManager->deleteObject(ID);
 }
 

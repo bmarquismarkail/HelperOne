@@ -4,6 +4,7 @@
 #include "ComponentBase.h"
 #include "../Object/marquisobject.h"
 
+class MarquisObject;
 
 class MarquisComponent : public ComponentBase
 {
