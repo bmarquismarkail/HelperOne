@@ -1,9 +1,8 @@
 #ifndef COMPONENTBASE_H
 #define COMPONENTBASE_H
 
-#include <string>
-
 #include "../basefunc.h"
+
 typedef std::string com_id;
 class ComponentBase : virtual public _object
 {

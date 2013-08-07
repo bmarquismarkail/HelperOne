@@ -1,12 +1,11 @@
 #ifndef COMPONENTMANAGER_H
 #define COMPONENTMANAGER_H
 
-#include "componentbase.h"
 #include "../basefunc.h"
+#include "componentbase.h"
 
-#include <map>
 
-typedef std::map<const com_id, ComponentBase*> ComponentList;
+typedef MarquisSystem::ManMap<const com_id, ComponentBase*> ComponentList;
 class ComponentManager : virtual public _manager
 {
     public:

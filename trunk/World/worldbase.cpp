@@ -1,6 +1,5 @@
 #include "worldbase.h"
 
-#include <iostream>
 
 WorldBase::WorldBase()
 {

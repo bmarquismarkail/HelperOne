@@ -1,8 +1,8 @@
 #ifndef WORLDBASE_H
 #define WORLDBASE_H
 
-#include "../scene/scenemanager.h"
 #include "../basefunc.h"
+#include "../scene/scenemanager.h"
 class WorldBase : virtual public _object
 {
     public:

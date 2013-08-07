@@ -1,9 +1,9 @@
 #ifndef OBJECTBASE_H
 #define OBJECTBASE_H
 
-#include "../component/componentmanager.h"
 #include "../basefunc.h"
-#include <string>
+#include "../component/componentmanager.h"
+
 
 typedef std::string ob_id;
 class ObjectBase : virtual public _object

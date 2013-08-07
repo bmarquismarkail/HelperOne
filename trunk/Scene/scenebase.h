@@ -1,11 +1,12 @@
 #ifndef SCENEBASE_H
 #define SCENEBASE_H
 
-#include "../object/objectmanager.h"
 #include "../basefunc.h"
-#include <string>
+#include "../object/objectmanager.h"
+
 
 typedef std::string sc_id; //the ID of the scene
+
 class SceneBase : virtual public _object
 {
     public:
