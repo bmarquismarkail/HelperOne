@@ -5,7 +5,7 @@
 #include "componentbase.h"
 
 
-typedef MarquisSystem::ManMap<const com_id, ComponentBase*> ComponentList;
+typedef MarquisSystem<const com_id, ComponentBase*>::ManMap ComponentList;
 class ComponentManager : virtual public _manager
 {
     public:

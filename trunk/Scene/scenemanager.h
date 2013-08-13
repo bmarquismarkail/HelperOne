@@ -3,7 +3,7 @@
 
 #include "scenebase.h"
 
-typedef MarquisSystem::ManMap<const sc_id, SceneBase*> SceneList;
+typedef MarquisSystem<const sc_id, SceneBase*>::ManMap SceneList;
 
 class SceneManager : virtual public _manager
 {
