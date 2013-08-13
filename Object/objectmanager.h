@@ -4,7 +4,7 @@
 #include "../basefunc.h"
 #include "objectbase.h"
 
-typedef MarquisSystem::ManMap<const ob_id, ObjectBase*> ObjectList;
+typedef MarquisSystem<const ob_id, ObjectBase*>::ManMap ObjectList;
 
 class ObjectManager : virtual public _manager
 {
