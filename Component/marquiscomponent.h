@@ -6,6 +6,7 @@
 
 class MarquisObject;
 
+template<class T>
 class MarquisComponent : public ComponentBase
 {
     public:
@@ -14,6 +15,7 @@ class MarquisComponent : public ComponentBase
         MarquisObject *getGuardianObject();
     protected:
         MarquisObject *inObject;
+		T* GetSibling(ComponentBase *Base);
     private:
 };
 
