@@ -2,7 +2,7 @@
 #define WORLDBASE_H
 
 #include "../basefunc.h"
-#include "../scene/scenemanager.h"
+#include "../Scene/scenemanager.h"
 class WorldBase : virtual public _object
 {
     public:

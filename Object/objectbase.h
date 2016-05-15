@@ -2,7 +2,7 @@
 #define OBJECTBASE_H
 
 #include "../basefunc.h"
-#include "../component/componentmanager.h"
+#include "../Component/componentmanager.h"
 
 
 typedef std::string ob_id;

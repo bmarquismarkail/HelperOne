@@ -2,7 +2,7 @@
 #define SCENEBASE_H
 
 #include "../basefunc.h"
-#include "../object/objectmanager.h"
+#include "../Object/objectmanager.h"
 
 
 typedef std::string sc_id; //the ID of the scene

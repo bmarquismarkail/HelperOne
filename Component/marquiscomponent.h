@@ -1,7 +1,7 @@
 #ifndef MARQUISCOMPONENT_H
 #define MARQUISCOMPONENT_H
 
-#include "ComponentBase.h"
+#include "componentbase.h"
 #include "../Object/marquisobject.h"
 
 class MarquisObject;
